@@ -1,0 +1,55 @@
+---
+// Layout.astro – Keystatic/GenCSS testprosjekt
+import '../styles/globals.css'
+import '../styles/custom.css'
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const {
+    title,
+    description = "Testprosjekt – Keystatic CMS og GenCSS",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body>
+    <header class="sticky">
+        <div class="container">
+            <nav class="flex items-center justify-between">
+                <a href="/" style="text-decoration: none;">
+                    <strong>{title}</strong>
+                </a>
+                <div class="cluster">
+                    <a href="/blogg">Blogg</a>
+                    <a href="/keystatic" class="btn btn--primary">Admin</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <slot />
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="text-xs" style="color: var(--text-muted); padding-block: var(--space-m);">
+                Testprosjekt – ikkje for publisering
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

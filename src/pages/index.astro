@@ -1,17 +1,24 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Keystatic + GenCSS – test">
+    <section>
+        <div class="container">
+            <div class="stack">
+                <p class="heading-label">Testprosjekt</p>
+                <h1 class="heading-hook">
+                    Keystatic CMS og <span class="accent">GenCSS</span>
+                </h1>
+                <p style="color: var(--text-muted); max-width: 60ch;">
+                    Ein enkel test av Keystatic som CMS og GenCSS som alternativ til Tailwind.
+                    Blogginnlegg vert redigert via Keystatic Studio.
+                </p>
+                <div class="cluster">
+                    <a href="/blogg" class="btn btn--primary">Sjå blogg</a>
+                    <a href="/keystatic" class="btn btn--primary-outline">Opne Studio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

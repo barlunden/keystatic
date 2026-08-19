@@ -1,0 +1,52 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const innlegg = await getCollection("blogg");
+  return innlegg.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const data = post.data as typeof post.data & { bilde?: string };
+const { Content } = await render(post);
+---
+
+<Layout title={data.tittel} description={data.ingress}>
+  <section>
+    <div class="container" style="max-width: 75ch;">
+      <div class="stack">
+
+        {data.bilde && (
+          <img
+            src={data.bilde}
+            alt={data.tittel}
+            style={`object-position: ${data.fokusPunktX} ${data.fokusPunktY}; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--border-radius);`}
+          />
+        )}
+
+        <p class="text-xs" style="color: var(--text-muted);">
+          {data.publisert
+            ? new Date(data.publisert).toLocaleDateString("nb-NO")
+            : ""}
+        </p>
+
+        <h1>{data.tittel}</h1>
+
+        {data.ingress && (
+          <p class="text-l" style="color: var(--text-muted); font-style: italic;">
+            {data.ingress}
+          </p>
+        )}
+
+        <div class="prose">
+          <Content />
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

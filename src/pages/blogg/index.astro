@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const innlegg = await getCollection("blogg");
+const sortert = innlegg.sort(
+  (a, b) =>
+    new Date(b.data.publisert ?? 0).getTime() -
+    new Date(a.data.publisert ?? 0).getTime(),
+);
+---
+
+<Layout title="Blogg">
+  <section>
+    <div class="container stack">
+      <h1>Blogg</h1>
+      <ul class="stack list-none">
+        {
+          sortert.map((post) => (
+            <li>
+              <a href={`/blogg/${post.id}`} style="text-decoration: none;">
+                <article class="card">
+                  <p class="text-xs" style="color: var(--text-muted);">
+                    {post.data.publisert
+                      ? new Date(post.data.publisert).toLocaleDateString("nb-NO")
+                      : "Ukjent dato"}
+                  </p>
+                  <h2>{post.data.tittel}</h2>
+                  {post.data.ingress && (
+                    <p style="color: var(--text-muted);">{post.data.ingress}</p>
+                  )}
+                </article>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
