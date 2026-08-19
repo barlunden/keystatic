@@ -5,7 +5,8 @@ import markdoc from "@astrojs/markdoc";
 import netlify from "@astrojs/netlify";
 
 export default defineConfig({
-    output: "hybrid",
+    site: "https://comino-keystatic.netlify.app",
+    output: "static",
     adapter: netlify(),
     integrations: [react(), markdoc(), keystatic()],
 });
