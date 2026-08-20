@@ -2,9 +2,11 @@ import { config, collection, fields } from "@keystatic/core";
 
 export default config({
   storage: {
-        kind: process.env.NODE_ENV === "development" ? "local" : "github",
-        repo: "barlunden/keystatic",
-    },
+    kind: "cloud",
+  },
+  cloud: {
+    project: "comino-web/keystatic",
+  },
   collections: {
     blogg: collection({
       label: "Blogginnlegg",
