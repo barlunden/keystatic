@@ -2,8 +2,9 @@ import { config, collection, fields } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
-  },
+        kind: process.env.NODE_ENV === "development" ? "local" : "github",
+        repo: "barlunden/keystatic",
+    },
   collections: {
     blogg: collection({
       label: "Blogginnlegg",
