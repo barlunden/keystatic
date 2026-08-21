@@ -43,7 +43,7 @@ section {
 /* ══ USER:LAYOUT:END ══ */
 
 /* ══ FEWD:COLOR-PRIMITIVES:START ══ */
-/* fewd-config: enabled=primary,secondary,tertiary,accent,base,neutral primary=#6b00ff secondary=#9c8649 tertiary=#888888 accent=#487d42 base=#181b1c neutral=#bbbbbb */
+/* fewd-config: enabled=primary,secondary,tertiary,accent,base,neutral primary=#00719c secondary=#9c8649 tertiary=#888888 accent=#487d42 base=#181b1c neutral=#bbbbbb */
 /* fewd-config-status: error=#dc2626 warning=#d97706 success=#16a34a info=#94a3b8 */
 :root {
   /* ── Base ── */
@@ -71,38 +71,38 @@ section {
   --black-90: oklch(0% 0 0 / 0.90);
 
   /* Primary */
-  --primary-light-2: oklch(0.702 0.172 285.0);
-  --primary-light-1: oklch(0.622 0.243 285.0);
-  --primary: oklch(0.522 0.312 285.0);
-  --primary-dark-1: oklch(0.452 0.281 285.0);
-  --primary-dark-2: oklch(0.382 0.234 285.0);
+  --primary-light-2: oklch(0.689 0.066 229.5);
+  --primary-light-1: oklch(0.609 0.094 229.5);
+  --primary: oklch(0.509 0.120 229.5);
+  --primary-dark-1: oklch(0.439 0.108 229.5);
+  --primary-dark-2: oklch(0.369 0.090 229.5);
   /* Primary transparencies */
-  --primary-trans10: oklch(0.522 0.312 285.0 / 0.10);
-  --primary-trans20: oklch(0.522 0.312 285.0 / 0.20);
-  --primary-trans30: oklch(0.522 0.312 285.0 / 0.30);
-  --primary-trans40: oklch(0.522 0.312 285.0 / 0.40);
-  --primary-trans50: oklch(0.522 0.312 285.0 / 0.50);
-  --primary-trans60: oklch(0.522 0.312 285.0 / 0.60);
-  --primary-trans70: oklch(0.522 0.312 285.0 / 0.70);
-  --primary-trans80: oklch(0.522 0.312 285.0 / 0.80);
-  --primary-trans90: oklch(0.522 0.312 285.0 / 0.90);
+  --primary-trans10: oklch(0.509 0.120 229.5 / 0.10);
+  --primary-trans20: oklch(0.509 0.120 229.5 / 0.20);
+  --primary-trans30: oklch(0.509 0.120 229.5 / 0.30);
+  --primary-trans40: oklch(0.509 0.120 229.5 / 0.40);
+  --primary-trans50: oklch(0.509 0.120 229.5 / 0.50);
+  --primary-trans60: oklch(0.509 0.120 229.5 / 0.60);
+  --primary-trans70: oklch(0.509 0.120 229.5 / 0.70);
+  --primary-trans80: oklch(0.509 0.120 229.5 / 0.80);
+  --primary-trans90: oklch(0.509 0.120 229.5 / 0.90);
 
   /* Secondary */
-  --secondary-light-2: oklch(0.807 0.047 89.9);
-  --secondary-light-1: oklch(0.727 0.066 89.9);
-  --secondary: oklch(0.627 0.085 89.9);
-  --secondary-dark-1: oklch(0.557 0.076 89.9);
-  --secondary-dark-2: oklch(0.487 0.064 89.9);
+  --secondary-light-2: oklch(0.807 0.047 90.0);
+  --secondary-light-1: oklch(0.727 0.066 90.0);
+  --secondary: oklch(0.627 0.085 90.0);
+  --secondary-dark-1: oklch(0.557 0.076 90.0);
+  --secondary-dark-2: oklch(0.487 0.064 90.0);
   /* Secondary transparencies */
-  --secondary-trans10: oklch(0.627 0.085 89.9 / 0.10);
-  --secondary-trans20: oklch(0.627 0.085 89.9 / 0.20);
-  --secondary-trans30: oklch(0.627 0.085 89.9 / 0.30);
-  --secondary-trans40: oklch(0.627 0.085 89.9 / 0.40);
-  --secondary-trans50: oklch(0.627 0.085 89.9 / 0.50);
-  --secondary-trans60: oklch(0.627 0.085 89.9 / 0.60);
-  --secondary-trans70: oklch(0.627 0.085 89.9 / 0.70);
-  --secondary-trans80: oklch(0.627 0.085 89.9 / 0.80);
-  --secondary-trans90: oklch(0.627 0.085 89.9 / 0.90);
+  --secondary-trans10: oklch(0.627 0.085 90.0 / 0.10);
+  --secondary-trans20: oklch(0.627 0.085 90.0 / 0.20);
+  --secondary-trans30: oklch(0.627 0.085 90.0 / 0.30);
+  --secondary-trans40: oklch(0.627 0.085 90.0 / 0.40);
+  --secondary-trans50: oklch(0.627 0.085 90.0 / 0.50);
+  --secondary-trans60: oklch(0.627 0.085 90.0 / 0.60);
+  --secondary-trans70: oklch(0.627 0.085 90.0 / 0.70);
+  --secondary-trans80: oklch(0.627 0.085 90.0 / 0.80);
+  --secondary-trans90: oklch(0.627 0.085 90.0 / 0.90);
 
   /* Tertiary */
   --tertiary-light-2: oklch(0.807 0.000 89.9);
@@ -659,7 +659,7 @@ section {
 /* ── Variant: Primary ── */
 .btn--primary {
   --_btn-bg:     var(--primary);
-  --_btn-text:   var(--white);
+  --_btn-text:   var(--primary-light-2);
   --_btn-border: var(--primary);
 }
 .btn--primary:hover,
@@ -676,7 +676,7 @@ section {
 .btn--primary-outline:hover,
 .btn--primary-outline:focus-visible {
   --_btn-bg:     var(--primary);
-  --_btn-text:   var(--white);
+  --_btn-text:   var(--primary-light-2);
   --_btn-border: var(--primary);
 }
 
