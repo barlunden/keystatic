@@ -2,8 +2,23 @@ import { config, collection, fields } from "@keystatic/core";
 
 export default config({
   ui: {
-    brand: { name: "Comino Web" }
-  },
+        brand: {
+            name: "Klart Hode",
+            mark: () => (
+                <a 
+                    href="/" 
+                    style={{ 
+                        fontSize: "0.8rem",
+                        textDecoration: "none",
+                        color: "inherit",
+                        opacity: 0.7,
+                    }}
+                >
+                    ← Tilbake til sida
+                </a>
+            ),
+        },
+    },
   storage: {
     kind: "cloud",
   },
