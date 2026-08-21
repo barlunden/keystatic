@@ -1,11 +1,4 @@
 /* ══ FEWD:FONTS:START ══ */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/Inter.woff2') format('woff2');
-}
 /* ══ FEWD:FONTS:END ══ */
 /* ══ USER:FONTS:START ══ */
 /* ══ USER:FONTS:END ══ */
@@ -666,7 +659,7 @@ section {
 /* ── Variant: Primary ── */
 .btn--primary {
   --_btn-bg:     var(--primary);
-  --_btn-text:   var(--primary-light-2);
+  --_btn-text:   var(--white);
   --_btn-border: var(--primary);
 }
 .btn--primary:hover,
@@ -683,7 +676,7 @@ section {
 .btn--primary-outline:hover,
 .btn--primary-outline:focus-visible {
   --_btn-bg:     var(--primary);
-  --_btn-text:   var(--primary-light-2);
+  --_btn-text:   var(--white);
   --_btn-border: var(--primary);
 }
 

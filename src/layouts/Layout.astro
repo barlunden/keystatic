@@ -1,55 +1,98 @@
 ---
 // Layout.astro – Keystatic/GenCSS testprosjekt
-import '../styles/globals.css'
-import '../styles/custom.css'
+import "../styles/globals.css";
+import "../styles/custom.css";
 
 interface Props {
-    title: string;
-    description?: string;
+  title: string;
+  description?: string;
 }
 
-const {
-    title,
-    description = "Testprosjekt – Keystatic CMS og GenCSS",
-} = Astro.props;
+const { title, description = "Testprosjekt – Keystatic CMS og GenCSS" } =
+  Astro.props;
 ---
 
 <!doctype html>
 <html lang="nb">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="preconnect" href="https://rsms.me/">
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-</head>
-<body>
-    <header class="sticky">
-        <div class="container">
-            <nav class="flex items-center justify-between">
-                <a href="/" style="text-decoration: none;">
-                    <strong>{title}</strong>
-                </a>
-                <div class="cluster">
-                    <a href="/blogg">Blogg</a>
-                    <a href="/keystatic" class="btn btn--primary">Admin</a>
-                </div>
-            </nav>
-        </div>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  </head>
+  <body>
+    <header class="site-header sticky">
+      <div class="container">
+        <nav class="site-nav">
+          <a href="/" class="site-nav__logo">
+            {title}
+          </a>
+          <div class="site-nav__links">
+            <a href="/blogg" class="site-nav__link">Blogg</a>
+            <a href="/keystatic" class="btn btn--primary">Admin</a>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <slot />
+      <slot />
     </main>
 
     <footer>
-        <div class="container">
-            <p class="text-xs" style="color: var(--text-muted); padding-block: var(--space-m);">
-                Testprosjekt – ikkje for publisering
-            </p>
-        </div>
+      <div class="container">
+        <p
+          class="text-xs"
+          style="color: var(--text-muted); padding-block: var(--space-m);"
+        >
+          Testprosjekt – ikkje for publisering
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
+
+<style>
+  .site-header {
+    background: oklch(from var(--color-body-bg, #fff) l c h / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--black-10, rgba(0, 0, 0, 0.08));
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-s);
+  }
+
+  .site-nav__logo {
+    font-weight: 700;
+    font-size: var(--text-m, 1rem);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m, 1rem);
+  }
+
+  .site-nav__link {
+    font-size: var(--text-s, 0.875rem);
+    font-weight: 500;
+    color: var(--text-muted, inherit);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .site-nav__link:hover {
+    color: var(--text, inherit);
+  }
+</style>
