@@ -1,6 +1,9 @@
 import { config, collection, fields } from "@keystatic/core";
 
 export default config({
+  ui: {
+    brand: { name: "Comino Web" }
+  },
   storage: {
     kind: "cloud",
   },
