@@ -682,6 +682,14 @@ section {
 
 /* ══ FEWD:BUTTONS:END ══ */
 /* ══ USER:BUTTONS:START ══ */
+/* Override link color cascade for anchor-based buttons */
+a.btn--primary,
+a.btn--primary:visited,
+a.btn--primary:hover,
+a.btn--primary:focus-visible {
+  color: var(--white);
+  text-decoration: none;
+}
 /* ══ USER:BUTTONS:END ══ */
 
 /* ══ FEWD:LINKS:START ══ */
